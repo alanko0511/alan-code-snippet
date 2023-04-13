@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:15
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=dev
+  web:
+    image: denoland/deno:1.32.3
+    working_dir: /app
+    command: run --allow-all --watch /app/packages/api/index.ts
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
