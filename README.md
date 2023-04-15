@@ -4,4 +4,4 @@ Don't expect this repo to have any useful code snippets, or even if they are cor
 
 ![party parrot](https://cultofthepartyparrot.com/parrots/hd/opensourceparrot.gif)
 
-If you somethow find something useful, feel free to use it. It's Unlicense!
+If you somehow find something useful, feel free to use it. It's Unlicense!
