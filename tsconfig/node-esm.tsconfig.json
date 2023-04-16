@@ -1,14 +1,15 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    "module": "es2020",
+    "module": "nodenext",
     "removeComments": true,
-    "sourceMap": true,
     "outDir": "dist",
     "strict": true,
-    "lib": ["es2020"],
     "esModuleInterop": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "nodenext"
   },
-  "include": ["src/**/*"]
+  "ts-node": {
+    "esm": true,
+    "swc": true
+  }
 }
