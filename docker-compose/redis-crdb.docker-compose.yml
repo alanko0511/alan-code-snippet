@@ -1,0 +1,15 @@
+services:
+  db:
+    image: cockroachdb/cockroach:latest-v22.2
+    ports:
+      - 26257:26257
+      - 8080:8080
+    command: start-single-node
+    environment:
+      - COCKROACH_DATABASE=db
+      - COCKROACH_USER=username       # for web ui login
+      - COCKROACH_PASSWORD=password   # for web ui login
+  redis:
+    image: redis:7
+    ports:
+      - 6379:6379
