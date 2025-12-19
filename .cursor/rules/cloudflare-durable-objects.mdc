@@ -1,0 +1,51 @@
+---
+title: Cloudflare Durable Objects
+description: Guidelines for creating Cloudflare Durable Objects
+globs:
+  - "worker/**/*.ts"
+---
+
+# Cloudflare Durable Objects
+
+When creating Cloudflare Durable Objects, **ALWAYS** follow this pattern:
+
+## Required Pattern
+
+Durable Objects **MUST** extend from the `DurableObject` class imported from `cloudflare:workers`.
+
+### ✅ Correct Example:
+
+```typescript
+import { DurableObject } from "cloudflare:workers";
+
+export class FooObject extends DurableObject<Env> {
+  // Your Durable Object logic here
+
+  async fetch(request: Request): Promise<Response> {
+    // Handle requests
+    return new Response("Hello from Durable Object");
+  }
+}
+```
+
+### ❌ Incorrect Examples:
+
+```typescript
+// DON'T import from other locations
+import { DurableObject } from "@cloudflare/workers-types";
+
+// DON'T use custom base classes
+class CustomDurableObject {
+  // ...
+}
+
+// DON'T extend from non-DurableObject class
+export class FooObject extends CustomDurableObject {
+  // ...
+}
+```
+
+## Key Points
+
+1. **Always import** `DurableObject` from `cloudflare:workers`
+2. **Always extend** your durable object class from `DurableObject`
