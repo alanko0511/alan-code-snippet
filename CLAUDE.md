@@ -60,6 +60,10 @@ Include thorough context (conversation context is cleared when the plan executes
 
 # Tools & Integrations
 
+## Context7
+
+Always use Context7 MCP when library/API documentation, code generation, setup or configuration steps are needed without being explicitly asked.
+
 ## MCP Tool Calls
 
 When an MCP tool call fails — whether due to invalid syntax, a server error, or any other issue — **never silently ignore it or assume the result**. Diagnose what went wrong, fix the request, and retry. A failed call means you don't have the data; proceeding without it leads to wrong conclusions and wasted effort.
